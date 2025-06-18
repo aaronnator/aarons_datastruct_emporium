@@ -43,9 +43,16 @@ func delete(value):
 
 func delete_all():
 	head = null
+	
 
 func print_list():
 	var current = head
 	while current != null:
 		print(current.value)
+		current = current.next
+
+func print_label(label):
+	var current = head
+	while current != null:
+		label.text += str(current.value) + ","
 		current = current.next

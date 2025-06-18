@@ -25,20 +25,24 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-
-[node name="ButtonGo" type="Button" parent="Panel/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-text = "Go!"
-
 [node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
 modulate = Color(0.515383, 0.379052, 0.967793, 1)
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="ButtonGo" type="Button" parent="Panel/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = 195.0
+offset_right = 23.0
+offset_bottom = 226.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Print"
 
 [node name="ButtonAdd" type="Button" parent="Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -47,10 +51,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -70.0
+offset_top = -176.0
+offset_right = 74.0
+offset_bottom = -145.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Add random num
@@ -63,25 +67,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -19.5
-offset_top = 46.5
-offset_right = 19.5
-offset_bottom = 77.5
+offset_left = -39.0
+offset_top = -39.0
+offset_right = 37.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Clear list
 "
 
 [node name="Display" type="Label" parent="Panel/HBoxContainer/Panel"]
-layout_mode = 0
-offset_left = 157.0
-offset_top = 450.0
-offset_right = 241.0
-offset_bottom = 491.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.5
+offset_top = -141.0
+offset_right = 143.5
+grow_horizontal = 2
+grow_vertical = 0
+autowrap_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -93,6 +100,6 @@ bbcode_enabled = true
 text = "[u][i][b]Linked list[/b][/i][/u]"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer2/ButtonGo" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Panel/ButtonGo" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Panel/ButtonAdd" to="." method="_on_buttonAdd_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Panel/ButtonClear" to="." method="_on_button_clear_pressed"]
